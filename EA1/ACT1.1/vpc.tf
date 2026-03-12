@@ -4,7 +4,7 @@ resource "aws_vpc" "mi_vpc" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = "mi-vpc"
+    Name = "VPC principal"
   }
 }
 
