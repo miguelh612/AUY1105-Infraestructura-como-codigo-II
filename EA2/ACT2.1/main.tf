@@ -19,3 +19,15 @@ module "ec2" {
   vpc_id        = module.vpc.vpc_id
   instance_name = "MiInstancia"
 }
+
+module "s3_public_bucket" {
+  source = "./s3_module"
+
+  prefix = "lssd-assets"
+  suffix = "pub-98765"
+}
+
+# Salida para verificar el nombre final desde la raíz
+output "deployed_bucket_name" {
+  value = module.s3_public_bucket.bucket_id
+}
